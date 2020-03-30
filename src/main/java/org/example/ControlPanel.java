@@ -63,11 +63,15 @@ public class ControlPanel extends JPanel {
         } catch (IOException ex) { System.err.println(ex); }
     }
 
-    private void load(ActionEvent e) {
+
+    private void load(ActionEvent actionEvent) {
         try {
-            ImageIO.read(new File("logo.png"));
-        } catch (IOException ex) { System.err.println(ex); }
+            frame.canvas.image = ImageIO.read(new File("test.png"));
+        } catch (IOException ex) {
+            System.err.println(ex.getMessage());
+        }
     }
+    
 
     private void reset(ActionEvent e) {
             frame.canvas.frame.getContentPane().removeAll();
