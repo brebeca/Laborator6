@@ -62,11 +62,13 @@ public class ControlPanel extends JPanel {
             ImageIO.write(frame.canvas.image, "PNG", new File("test.png"));
         } catch (IOException ex) { System.err.println(ex); }
     }
-
-
-    private void load(ActionEvent actionEvent) {
+    
+    /**
+    *se apdateaza image din canvas unde se apeleasa si functia repaint() pt a afisa imaginea
+    */
+    private void load(ActionEvent e) {
         try {
-            frame.canvas.image = ImageIO.read(new File("test.png"));
+            frame.canvas.setImage(ImageIO.read(new File(path)));
         } catch (IOException ex) {
             System.err.println(ex.getMessage());
         }
